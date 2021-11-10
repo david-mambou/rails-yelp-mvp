@@ -1,10 +1,14 @@
-<% @restaurants.each do |restaurant| %>
-  <div class="restaurant-card">
-    <%= link_to restaurant.name, restaurant_path(restaurant.id)  %>
-    <p><%= restaurant.address %></p>
-    <p><%= restaurant.phone_number %></p>
-    <p><%= restaurant.category %></p>
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem; height: 18rem;">
+          <div class="card-body d-flex justify-content-center align-items-center rounded-lg font-weight-bold text-white" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/featured/?<%= restaurant.category %>&<%= rand(1000) %>); background-size: cover;">
+            <%= restaurant.name %>
+            <%= link_to "", restaurant_path(restaurant), class: "card-category-link"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
-
-<%= link_to 'Add new restaurant', new_restaurant_path %>
+</div>
