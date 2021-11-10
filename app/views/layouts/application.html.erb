@@ -13,6 +13,13 @@
   </head>
 
   <body>
+    <%# Navbar including title, 2 buttons, eventually avatar %>
+    <nav class="navbar navbar-light bg-light">
+      <h1>David's RailsYelp</h1>
+      <%= link_to 'All restaurants', restaurants_path, class: "btn rounded btn-outline-secondary" %>
+      <%= link_to 'Add restaurant', new_restaurant_path, class: "btn rounded btn-primary" %>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
